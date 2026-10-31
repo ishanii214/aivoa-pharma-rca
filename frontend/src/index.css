@@ -1,0 +1,105 @@
+ @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Print / Official Audit Report Export Styles */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  /* Saare interactive buttons, headers, drawer, aur intake panels ko strictly hide karein */
+  header,
+  nav,
+  button,
+  input[type="button"],
+  input[type="submit"],
+  aside,
+  [role="dialog"],
+  .fixed,
+  .print\:hidden,
+  .hidden-print,
+  .intake-panel,
+  .bg-emerald-50,
+  div[class*="w-80"],
+  div[class*="md:w-80"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Main layout full width display karein */
+  main,
+  .flex-1,
+  div[class*="flex-1"],
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Form container card shadow aur border reset */
+  .bg-white {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  /* Text cut hone se rokne ke liye inputs ko wrap aur natural height dein */
+  input,
+  textarea {
+    border: 1px solid #94a3b8 !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    height: auto !important;
+    min-height: 28px !important;
+    padding: 4px 6px !important;
+    display: block !important;
+  }
+
+  /* Fishbone grid ko print friendly do-column layout mein rakhein */
+  .grid {
+    display: grid !important;
+    gap: 8px !important;
+  }
+
+  /* AI Results Summary card ko clear printable theme dein */
+  .bg-slate-900 {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    margin-top: 12px !important;
+  }
+
+  .bg-slate-900 * {
+    color: #0f172a !important;
+  }
+
+  .bg-slate-800 {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #334155 !important;
+  }
+}

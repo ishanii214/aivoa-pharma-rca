@@ -1,0 +1,13 @@
+# Sensitive & Database files
+.env
+*.db
+investigations.db
+
+# Large packages & Environments
+node_modules/
+venv/
+__pycache__/
+
+# Zip & logs
+*.zip
+*.log
